@@ -27,6 +27,7 @@ app.use(express.json());
 //     .catch(err => console.error('MongoDB connection error:', err));
 
 
+
 const mongoURI = process.env.MONGODB_URI ;
 mongoose.connect(mongoURI, { useNewUrlParser: true, useUnifiedTopology: true })
     .then(() => console.log("MongoDB connected"))
@@ -65,6 +66,11 @@ const authenticateToken = (req, res, next) => {
     next();
     };
    };
+
+
+app.get("/", (req, res) => {
+    res.send("Welcome to the TrashTracker Backend!");
+});
 
 app.post('/api/register', async (req, res) => {
     const { email, password, role } = req.body;
