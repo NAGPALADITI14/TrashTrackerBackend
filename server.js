@@ -59,6 +59,11 @@ const authenticateToken = (req, res, next) => {
     };
    };
 
+
+app.get("/", (req, res) => {
+    res.send("Welcome to the TrashTracker Backend!");
+});
+
 app.post('/api/register', async (req, res) => {
     const { email, password, role } = req.body;
     const hashedPassword = await bcrypt.hash(password, 10);
