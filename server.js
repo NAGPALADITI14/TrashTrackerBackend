@@ -10,7 +10,6 @@ import dotenv from 'dotenv';
 import User from './model/User.js';
 import GarbageReport from './model/GarbageReport.js';
 // import { sendMail } from './gmailService.js'; 
-import { exec } from 'child_process';
 
 dotenv.config();
 
